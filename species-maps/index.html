@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Safeguarding mallee birds — habitat suitability maps</title>
+  <title>Species maps — safeguarding mallee birds</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,41 +12,61 @@
       padding: 0 24px;
       line-height: 1.6;
     }
-    h1 {
-      font-size: 2.2em;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 18px;
-      background: #0066cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+
+```
+h1 {
+  font-size: 2.2em;
+}
+
+.button {
+  display: block;
+  width: fit-content;
+  margin: 12px 0;
+  padding: 12px 18px;
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #004f99;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 28px;
+  color: #0066cc;
+}
+
+.note {
+  margin-top: 28px;
+  font-size: 0.95em;
+  color: #444;
+}
+```
+
   </style>
 </head>
+
 <body>
-  <h1>Safeguarding mallee birds — habitat suitability maps</h1>
+  <h1>Species-level habitat suitability maps</h1>
 
   <p>
-    These interactive maps show habitat suitability for the mallee bird community,
-    linking expert-elicited State-and-Transition Models of vegetation condition
-    to species- and community-level suitability scores.
+    Select a species to open its interactive habitat suitability map. Suitability
+    is shown on a 0–7 Likert scale, where 0 indicates that the species is not
+    expected to occur and 7 indicates the best available habitat.
   </p>
 
-  <p>
-    Suitability is shown on a 0–7 Likert scale, where 0 indicates that a species
-    is not expected to occur and 7 indicates the best available habitat.
+<a class="button" href="black-eared-miner/">Black-eared Miner</a> <a class="button" href="chestnut-quail-thrush/">Chestnut Quail-thrush</a> <a class="button" href="jacky-winter/">Jacky Winter</a> <a class="button" href="scarlet-chested-parrot/">Scarlet-chested Parrot</a> <a class="button" href="shy-heathwren/">Shy Heathwren</a> <a class="button" href="striated-grasswren/">Striated Grasswren</a>
+
+  <p class="note">
+    These maps link expert-elicited State-and-Transition Models of vegetation
+    condition to species-level suitability scores.
   </p>
 
-  <p>
-    Use the map layer control to turn species and community suitability layers
-    on and off. Satellite imagery is provided as an online basemap and may take
-    a moment to load.
-  </p>
+<a class="back-link" href="../">← Back to main map page</a>
 
-  <a class="button" href="map/">Open the interactive map</a>
 </body>
 </html>
