@@ -7,4 +7,4 @@ Suitability is shown on a 0–7 Likert scale:
 - 0 = species not expected to occur
 - 7 = best available habitat
 
-[Open the interactive map](qgis2web_2026_06_29-20_08_31_316383/index.html)
+[Open the interactive map](/index.html)
