@@ -153,8 +153,15 @@ html, body, #map {
             }
         }
         var zoomControl = L.control.zoom({
-            position: 'topleft'
-        }).addTo(map);
+    position: 'topleft'
+}).addTo(map);
+
+var scale = L.control.scale({
+    position: 'bottomleft',
+    metric: true,
+    imperial: false,
+    maxWidth: 200
+}).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
             if (bounds_group.getLayers().length) {
