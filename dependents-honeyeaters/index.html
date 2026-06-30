@@ -11,14 +11,62 @@
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
-        <style>
-        html, body, #map {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        </style>
+<style>
+html, body, #map {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.suitability-legend {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 12px 14px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.35);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.suitability-legend h3 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+}
+
+.legend-gradient {
+  width: 190px;
+  height: 16px;
+  border: 1px solid #777;
+  background: linear-gradient(to right,
+    #fff5eb,
+    #fee6ce,
+    #fdd0a2,
+    #fdae6b,
+    #fd8d3c,
+    #f16913,
+    #d94801,
+    #8c2d04
+  );
+}
+
+.legend-scale {
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.legend-label {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #444;
+}
+</style>
         <title></title>
     </head>
     <body>
@@ -356,6 +404,19 @@
         map.on("layerremove", function(){
             resetLabels([layer_Riverland_biosphere_6]);
         });
-        </script>        
+        </script>
+
+<div class="suitability-legend">
+  <h3>Habitat suitability</h3>
+  <div class="legend-gradient"></div>
+  <div class="legend-scale">
+    <span>0</span>
+    <span>7</span>
+  </div>
+  <div class="legend-label">
+    Low suitability → high suitability
+  </div>
+</div>
+
     </body>
 </html>
