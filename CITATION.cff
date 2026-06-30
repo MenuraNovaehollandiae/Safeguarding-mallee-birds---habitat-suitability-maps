@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use these maps, please cite this archived repository."
+title: "Safeguarding mallee birds — habitat suitability maps"
+type: dataset
+
+authors:
+  - family-names: Maisey
+    given-names: Alex C.
+
+abstract: "Interactive habitat suitability maps for the mallee bird community, linking expert-elicited State-and-Transition Models of vegetation condition to species- and community-level suitability scores."
+
+keywords:
+  - mallee birds
+  - habitat suitability
+  - State-and-Transition Models
+  - conservation planning
+  - biodiversity
+
+repository-code: "https://github.com/MenuraNovaehollandiae/Safeguarding-mallee-birds---habitat-suitability-maps"
+url: "https://menuranovaehollandiae.github.io/Safeguarding-mallee-birds---habitat-suitability-maps/"
+
+license: "CC-BY-4.0"
+version: "1.0.0"
+date-released: "2026-06-30"
