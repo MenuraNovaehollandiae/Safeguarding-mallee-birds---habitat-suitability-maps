@@ -12,13 +12,46 @@
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <style>
-        html, body, #map {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        </style>
+html, body, #map {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.suitability-legend {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 12px 14px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.35);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.suitability-legend h3 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+}
+
+.legend-row span {
+  display: inline-block;
+  width: 22px;
+  height: 13px;
+  margin-right: 7px;
+  border: 1px solid #777;
+}
+</style>
         <title></title>
     </head>
     <body>
@@ -320,6 +353,18 @@
         map.on("layerremove", function(){
             resetLabels([layer_Riverland_biosphere_2]);
         });
-        </script>        
+        </script>   
+		<div class="suitability-legend">
+  <h3>Habitat suitability</h3>
+
+  <div class="legend-row"><span style="background:#fff5eb;"></span>0 — species not expected</div>
+  <div class="legend-row"><span style="background:#fee6ce;"></span>1</div>
+  <div class="legend-row"><span style="background:#fdd0a2;"></span>2</div>
+  <div class="legend-row"><span style="background:#fdae6b;"></span>3</div>
+  <div class="legend-row"><span style="background:#fd8d3c;"></span>4</div>
+  <div class="legend-row"><span style="background:#f16913;"></span>5</div>
+  <div class="legend-row"><span style="background:#d94801;"></span>6</div>
+  <div class="legend-row"><span style="background:#8c2d04;"></span>7 — best habitat</div>
+</div>
     </body>
 </html>
