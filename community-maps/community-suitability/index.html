@@ -18,6 +18,38 @@
             padding: 0;
             margin: 0;
         }
+			.suitability-legend {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 12px 14px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.35);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.suitability-legend h3 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+}
+
+.legend-row span {
+  display: inline-block;
+  width: 22px;
+  height: 13px;
+  margin-right: 7px;
+  border: 1px solid #777;
+}
         </style>
         <title></title>
     </head>
@@ -39,7 +71,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-33.95836530607712,140.5501192511594],[-33.90033477299193,140.66304353175758]]);
+        })
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -109,6 +141,9 @@
         }).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
             map.setMaxBounds(map.getBounds());
             map.setMinZoom(map.getZoom());
         }
@@ -318,5 +353,17 @@
             resetLabels([layer_Riverland_biosphere_2]);
         });
         </script>        
+		<div class="suitability-legend">
+  <h3>Community suitability</h3>
+
+  <div class="legend-row"><span style="background:#f7fbff;"></span>0 — unsuitable / not expected</div>
+  <div class="legend-row"><span style="background:#deebf7;"></span>1</div>
+  <div class="legend-row"><span style="background:#c6dbef;"></span>2</div>
+  <div class="legend-row"><span style="background:#9ecae1;"></span>3</div>
+  <div class="legend-row"><span style="background:#6baed6;"></span>4</div>
+  <div class="legend-row"><span style="background:#4292c6;"></span>5</div>
+  <div class="legend-row"><span style="background:#2171b5;"></span>6</div>
+  <div class="legend-row"><span style="background:#084594;"></span>7 — highest suitability</div>
+</div>
     </body>
 </html>
