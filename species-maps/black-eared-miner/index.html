@@ -104,14 +104,14 @@
                 popup._contentNode.classList.remove('media');
             }
         }
-        var zoomControl = L.control.zoom({
+               var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
-            if (bounds_group.getLayers().length) {
-                map.fitBounds(bounds_group.getBounds());
-            }
+            map.setMaxBounds(map.getBounds());
+            map.setMinZoom(map.getZoom());
+        }
             map.setMaxBounds(map.getBounds());
             map.setMinZoom(map.getZoom());
         }
