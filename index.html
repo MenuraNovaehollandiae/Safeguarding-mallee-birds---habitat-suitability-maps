@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -12,39 +13,82 @@
       line-height: 1.6;
     }
 
-    h1 {
-      font-size: 2.2em;
-    }
+```
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 16px;
+}
 
-    h2 {
-      margin-top: 36px;
-    }
+h2 {
+  margin-top: 36px;
+}
 
-    .button {
-      display: inline-block;
-      margin: 12px 12px 0 0;
-      padding: 12px 18px;
-      background: #0066cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+.hero-image {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 18px 0 28px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
 
-    .button:hover {
-      background: #004f99;
-    }
+.graphic-card {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin: 28px 0;
+  padding: 16px;
+  background: #f7f7f7;
+  border-radius: 10px;
+}
 
-    .note {
-      margin-top: 32px;
-      font-size: 0.95em;
-      color: #444;
-    }
+.graphic-card img {
+  width: 220px;
+  max-width: 40%;
+  border-radius: 8px;
+}
+
+.button {
+  display: inline-block;
+  margin: 12px 12px 0 0;
+  padding: 12px 18px;
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #004f99;
+}
+
+.note {
+  margin-top: 32px;
+  font-size: 0.95em;
+  color: #444;
+}
+
+@media (max-width: 650px) {
+  .graphic-card {
+    display: block;
+  }
+
+  .graphic-card img {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+}
+```
+
   </style>
 </head>
 
 <body>
   <h1>Safeguarding mallee birds — habitat suitability maps</h1>
+
+  <img class="hero-image" src="PNG/Malleefowl.png" alt="Mallee habitat suitability mapping">
 
   <p>
     These interactive maps show habitat suitability for the mallee bird community,
@@ -54,8 +98,19 @@
 
   <p>
     Suitability is shown on a 0–7 Likert scale, where 0 indicates that a species
-    is not expected to occur and 7 indicates the best available habitat.
+    is not expected to occur and 7 indicates the best available habitat expected.
   </p>
+
+  <div class="graphic-card">
+    <img src="images/suitability-example.png" alt="Example habitat suitability map">
+    <div>
+      <strong>How to read the maps</strong>
+      <p>
+        Darker colours indicate higher predicted habitat suitability. Use the map
+        layer control to switch between species groups and community-level outputs.
+      </p>
+    </div>
+  </div>
 
   <p>
     Use the map layer control to turn map layers on and off. Satellite imagery is
@@ -64,12 +119,7 @@
 
   <h2>Explore the maps</h2>
 
-  <a class="button" href="mallee-specialists/">Mallee specialists</a>
-  <a class="button" href="dependents-honeyeaters/">Mallee dependents - honeyeaters</a>
-  <a class="button" href="dependents-shrub/">Mallee dependents - shrub birds</a>
-  <a class="button" href="dependents-gleaners/">Mallee dependents - foliage gleaners</a>
-  <a class="button" href="dependents-parrots/">Mallee dependents - parrots</a>
-  <a class="button" href="community-maps/">Community-level maps</a>
+<a class="button" href="mallee-specialists/">Mallee specialists</a> <a class="button" href="dependents-honeyeaters/">Mallee dependents - honeyeaters</a> <a class="button" href="dependents-shrub/">Mallee dependents - shrub birds</a> <a class="button" href="dependents-gleaners/">Mallee dependents - foliage gleaners</a> <a class="button" href="dependents-parrots/">Mallee dependents - parrots</a> <a class="button" href="community-maps/">Community-level maps</a>
 
   <p class="note">
     These maps are intended as decision-support outputs and should be interpreted
