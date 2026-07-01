@@ -42,14 +42,18 @@ html, body, #map {
   height: 16px;
   border: 1px solid #777;
   background: linear-gradient(to right,
-    #f7fbff,
-    #deebf7,
-    #c6dbef,
-    #9ecae1,
-    #6baed6,
-    #4292c6,
-    #2171b5,
-    #084594
+    rgb(247, 251, 255),
+    rgb(230, 240, 249),
+    rgb(212, 229, 244),
+    rgb(194, 217, 238),
+    rgb(166, 205, 228),
+    rgb(133, 188, 220),
+    rgb(99, 169, 211),
+    rgb(70, 149, 200),
+    rgb(46, 126, 188),
+    rgb(25, 103, 173),
+    rgb(8, 78, 152),
+    rgb(8, 48, 107)
   );
 }
 
@@ -383,10 +387,13 @@ var scale = L.control.scale({
   <div class="legend-gradient"></div>
   <div class="legend-scale">
     <span>0</span>
-    <span>7</span>
+    <span>1.36</span>
   </div>
   <div class="legend-label">
-    Low disagreement → high disagreement
+    Standard deviation of expert scores
+  </div>
+  <div class="legend-label">
+    Lower SD = greater agreement; higher SD = greater disagreement
   </div>
 </div>
 
