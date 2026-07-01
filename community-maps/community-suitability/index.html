@@ -18,7 +18,7 @@
             padding: 0;
             margin: 0;
         }
-			.suitability-legend {
+.suitability-legend {
   position: absolute;
   bottom: 30px;
   right: 20px;
@@ -29,7 +29,6 @@
   box-shadow: 0 1px 5px rgba(0,0,0,0.35);
   font-family: Arial, sans-serif;
   font-size: 13px;
-  line-height: 1.3;
 }
 
 .suitability-legend h3 {
@@ -37,18 +36,34 @@
   font-size: 15px;
 }
 
-.legend-row {
-  display: flex;
-  align-items: center;
-  margin: 3px 0;
+.legend-gradient {
+  width: 190px;
+  height: 16px;
+  border: 1px solid #777;
+  background: linear-gradient(to right,
+    #f7fbff,
+    #deebf7,
+    #c6dbef,
+    #9ecae1,
+    #6baed6,
+    #4292c6,
+    #2171b5,
+    #084594
+  );
 }
 
-.legend-row span {
-  display: inline-block;
-  width: 22px;
-  height: 13px;
-  margin-right: 7px;
-  border: 1px solid #777;
+.legend-scale {
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.legend-label {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #444;
 }
         </style>
         <title></title>
@@ -360,17 +375,17 @@ var scale = L.control.scale({
             resetLabels([layer_Riverland_biosphere_2]);
         });
         </script>        
+		
 		<div class="suitability-legend">
   <h3>Community suitability</h3>
-
-  <div class="legend-row"><span style="background:#f7fbff;"></span>1 — unsuitable / not expected</div>
-  <div class="legend-row"><span style="background:#deebf7;"></span>1</div>
-  <div class="legend-row"><span style="background:#c6dbef;"></span>2</div>
-  <div class="legend-row"><span style="background:#9ecae1;"></span>3</div>
-  <div class="legend-row"><span style="background:#6baed6;"></span>4</div>
-  <div class="legend-row"><span style="background:#4292c6;"></span>5</div>
-  <div class="legend-row"><span style="background:#2171b5;"></span>6</div>
-  <div class="legend-row"><span style="background:#084594;"></span>7 — highest suitability</div>
+  <div class="legend-gradient"></div>
+  <div class="legend-scale">
+    <span>1</span>
+    <span>7</span>
+  </div>
+  <div class="legend-label">
+    Low suitability → high suitability
+  </div>
 </div>
     </body>
 </html>
